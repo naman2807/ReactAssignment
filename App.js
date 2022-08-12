@@ -7,6 +7,7 @@ import ItemDescScreen from "./screens/ItemDescScreen";
 import Button from "./components/Button";
 import CartContextProvider from "./store/cart-context";
 import CartScreen from "./screens/CartScreen";
+import { Constants } from "./util/constants";
 
 const Stack = createNativeStackNavigator();
 
@@ -21,14 +22,14 @@ export default function App() {
             }}
           >
             <Stack.Screen
-              name="ItemScreen"
+              name={Constants.HOME_PAGE}
               component={ItemScreen}
               options={{
                 title: "Items List",
               }}
             />
-            <Stack.Screen name="ItemDescription" component={ItemDescScreen} />
-            <Stack.Screen name="CartScreen" component={CartScreen} />
+            <Stack.Screen name={Constants.ITEM_DESC_SCREEN} component={ItemDescScreen} />
+            <Stack.Screen name={Constants.CART_ITEMS_SCREEN} component={CartScreen} />
           </Stack.Navigator>
         </NavigationContainer>
       </CartContextProvider>

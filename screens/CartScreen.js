@@ -3,6 +3,7 @@ import { FlatList, StyleSheet, Text, View } from "react-native";
 import ItemView from "../components/ItemView";
 import { ITEMS } from "../data/dummy-data";
 import { CartContext } from "../store/cart-context";
+import { Constants } from "../util/constants";
 
 function CartScreen({ navigation }) {
   const cartContext = useContext(CartContext);
@@ -17,7 +18,7 @@ function CartScreen({ navigation }) {
 
   function renderItem(item) {
     function onPressHandler() {
-      navigation.navigate("ItemDescription", {
+      navigation.navigate(Constants.ITEM_DESC_SCREEN, {
         itemId: item.item.id,
       });
     }

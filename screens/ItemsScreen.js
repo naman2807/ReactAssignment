@@ -4,6 +4,7 @@ import BottomCartView from "../components/BottomCartView";
 import ItemView from "../components/ItemView";
 import { ITEMS } from "../data/dummy-data";
 import { CartContext } from "../store/cart-context";
+import { Constants } from "../util/constants";
 
 function ItemScreen({ navigation }) {
   const cartContext = useContext(CartContext);
@@ -11,7 +12,7 @@ function ItemScreen({ navigation }) {
 
   function renderItem(item) {
     function onPressHandler() {
-      navigation.navigate("ItemDescription", {
+      navigation.navigate(Constants.ITEM_DESC_SCREEN, {
         itemId: item.item.id,
       });
     }

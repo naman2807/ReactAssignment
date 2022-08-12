@@ -1,9 +1,10 @@
 import { Image, StyleSheet, Text, View } from "react-native";
+import { Constants } from "../util/constants";
 import Button from "./Button";
 
 function BottomCartView({ cartCount, navigation }) {
   function navigateToCart() {
-    navigation.navigate("CartScreen");
+    navigation.navigate(Constants.CART_ITEMS_SCREEN);
   }
   return (
     <View style={styles.container}>
