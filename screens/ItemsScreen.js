@@ -29,7 +29,7 @@ function ItemScreen({ navigation }) {
 
       {cartCount > 0 ? (
         <View style={styles.bottomContainer}>
-          <BottomCartView cartCount={cartCount} />
+          <BottomCartView navigation={navigation} cartCount={cartCount} />
         </View>
       ) : null}
     </View>

@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import ItemDescScreen from "./screens/ItemDescScreen";
 import Button from "./components/Button";
 import CartContextProvider from "./store/cart-context";
+import CartScreen from "./screens/CartScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -27,6 +28,7 @@ export default function App() {
               }}
             />
             <Stack.Screen name="ItemDescription" component={ItemDescScreen} />
+            <Stack.Screen name="CartScreen" component={CartScreen} />
           </Stack.Navigator>
         </NavigationContainer>
       </CartContextProvider>
