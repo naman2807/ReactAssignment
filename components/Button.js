@@ -1,10 +1,10 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
-function Button({ onClick }) {
+function Button({ onClick, buttonText, buttonColor, textColor }) {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, {backgroundColor: buttonColor}]}>
       <Pressable style={styles.button} onPress={onClick}>
-        <Text style={styles.buttonText}>Add To Cart</Text>
+        <Text style={[styles.buttonText, {color: textColor}]}>{buttonText}</Text>
       </Pressable>
     </View>
   );
@@ -14,7 +14,6 @@ export default Button;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "red",
     borderRadius: 5,
   },
 

@@ -1,15 +1,22 @@
 import { Image, StyleSheet, Text, View } from "react-native";
+import Button from "./Button";
 
-function BottomCartView() {
+function BottomCartView({cartCount}) {
   return (
     <View style={styles.container}>
       <Image
         style={styles.imageContainer}
-        source={require("../assets/icon.png")}
+        source={require("../assets/cart.jpg")}
       />
-      <View style={styles.textContainer}>
-        <Text style={styles.text}>Dummy Text</Text>
+      <View >
+        <Text style={styles.text}>{cartCount} items added to cart</Text>
       </View>
+
+      <Button
+            buttonText="View Cart"
+            buttonColor="white"
+            textColor="red"
+          />
     </View>
   );
 }
@@ -21,6 +28,8 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     padding: 20,
+    alignItems: 'center',
+    justifyContent: "space-between",
     backgroundColor: "red",
     borderTopLeftRadius: 16,
     borderTopRightRadius: 16,
@@ -28,12 +37,7 @@ const styles = StyleSheet.create({
 
   imageContainer: {
     width: 50,
-    height: 50,
-    marginRight: 50,
-  },
-
-  textContainer: {
-    marginTop: 10,
+    height: 50
   },
 
   text: {
